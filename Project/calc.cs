@@ -108,20 +108,16 @@ namespace FuelCalculatorApp
 
             double travelCost = 0;
 
-            // Calculate travel cost based on selected options
             if (kmRadioButton.Checked && litersRadioButton.Checked)
             {
-                // Calculation logic for kilometers and liters/100km
                 travelCost = (distance / 100) * fuelConsumption * fuelCost;
             }
             else if (milesRadioButton.Checked && gallonsRadioButton.Checked)
             {
-                // Calculation logic for miles and liters/100 miles
                 travelCost = (distance / 100) * fuelConsumption * fuelCost * 0.621371; // Convert liters to gallons
             }
             else
             {
-                // Handle if no options are selected
                 MessageBox.Show("Please select distance and fuel consumption units.");
                 return;
             }
